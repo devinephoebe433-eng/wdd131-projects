@@ -1,142 +1,26 @@
-/* W02 Picture Album CSS - Rubric Based */
+/* temples-large.css - ONLY Media Queries */
 
-/* ---------- RESET ---------- */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
-
-/* ---------- BODY ---------- */
-body {
-font-family: Arial, Helvetica, sans-serif;
-line-height: 1.6;
-background-color: #ffffff;
-color: #111;
-}
-
-/* ---------- HEADER ---------- */
-header {
-background-color: #1f2933;
-color: white;
-text-align: center;
-padding: 1rem;
-}
-
-/* ---------- NAVIGATION ---------- */
-#menu {
-font-size: 1.5rem;
-background-color: #1f2933;
-color: white;
-border: none;
-padding: .5rem 1rem;
-cursor: pointer;
-}
-
-nav {
-background-color: #374151;
-}
-
-nav ul {
-list-style: none;
-display: none;
-flex-direction: column;
-}
-
-nav ul li a {
-display: block;
-padding: 1rem;
-text-decoration: none;
-color: white;
-font-weight: bold;
-}
-
-nav ul li a:hover {
-background-color: #4b5563;
-}
-
-/* Menu open state */
-.open ul {
-display: flex;
-}
-
-/* ---------- MAIN ---------- */
-main {
-padding: 1rem;
-max-width: 900px;
-margin: auto;
-}
-
-/* ---------- IMAGE ALBUM ---------- */
-.album {
-display: grid;
-grid-template-columns: 1fr;
-gap: 1rem;
-}
-
-/* ---------- FIGURES ---------- */
-figure {
-border: 1px solid #ddd;
-background-color: #f8f8f8;
-padding: .5rem;
-text-align: center;
-}
-
-figcaption {
-margin-top: .5rem;
-font-size: .9rem;
-}
-
-/* ---------- RESPONSIVE IMAGES ---------- */
-img {
-width: 100%;
-height: auto;
-border-radius: 4px;
-}
-
-/* ---------- FOOTER ---------- */
-footer {
-margin-top: 2rem;
-background-color: #1f2933;
-color: white;
-text-align: center;
-padding: 1rem;
-font-size: .9rem;
-}
-
-/* ---------- TABLET VIEW ---------- */
 @media (min-width: 600px) {
-
-```
-.album {
-    grid-template-columns: repeat(2, 1fr);
-}
-```
-
+    .card {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* ---------- DESKTOP VIEW ---------- */
 @media (min-width: 900px) {
+    nav {
+        flex-direction: row;
+        justify-content: center;
+    }
 
-```
-#menu {
-    display: none;
-}
+    nav a {
+        padding: 1rem 2rem;
+    }
 
-nav ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-.album {
-    grid-template-columns: repeat(3, 1fr);
-}
-```
-
+    .card {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    header {
+        padding: 2rem;
+    }
 }
