@@ -6,7 +6,7 @@
     <title>Country Page - Explore the World</title>
     <meta name="description" content="Discover breathtaking destinations like Paris, Kyoto, and Cape Town. Get real-time weather and travel insights.">
     <meta name="author" content="Nabugobero Devine Phoebe">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,10 +18,8 @@
 <body>
     <header>
         <h1>Country Page</h1>
-
-        <button id="menu-btn">☰</button>
-
-       <nav id="nav-menu" class="hidden">
+        <button id="menu-btn" aria-label="Open Menu">☰</button>
+        <nav id="nav-menu">
             <a href="#">Home</a>
             <a href="#">Destinations</a>
             <a href="#">Gallery</a>
@@ -29,10 +27,11 @@
         </nav>
     </header>
 
-    <picture class="hero">
-    <source srcset="images/hero.webp" media="(min-width: 768px)">
-    <img src="images/hero.webp" alt="places landscape" width="300">
-</picture>
+    <div class="hero">
+        <picture>
+            <source srcset="images/hero.webp" media="(min-width: 768px)">
+            <img src="images/hero.webp" alt="Landscape of the featured destination" width="1200" height="600" loading="lazy">
+        </picture>
         <div class="hero-label">
             <h2>Featured Destination</h2>
         </div>
@@ -49,7 +48,7 @@
 
         <section class="weather card">
             <h3 class="weather-heading">Weather</h3>
-            <img src="images/weather.svg" alt="Weather icon" class="weather-icon-mobile" width="50">
+            <img src="images/weather.svg" alt="Weather icon" class="weather-icon-mobile" width="50" height="50">
             
             <div class="weather-details">
                 <p><strong>Temperature:</strong> <span id="temp">8</span>°C</p>
@@ -59,20 +58,20 @@
             </div>
         </section>
 
-        <section class="gallery">
+        <div class="gallery">
             <figure class="card">
-                <img src="images/paris.webp" alt="Eiffel Tower in Paris" loading="lazy">
+                <img src="images/paris.webp" alt="Eiffel Tower in Paris" loading="lazy" width="400" height="300">
                 <figcaption>Paris, France</figcaption>
             </figure>
             <figure class="card">
-                <img src="images/kyoto.webp" alt="Temple in Kyoto" loading="lazy">
+                <img src="images/kyoto.webp" alt="Temple in Kyoto" loading="lazy" width="400" height="300">
                 <figcaption>Kyoto, Japan</figcaption>
             </figure>
             <figure class="card">
-                <img src="images/nyc.webp" alt="New York skyline" loading="lazy">
+                <img src="images/nyc.webp" alt="New York skyline" loading="lazy" width="400" height="300">
                 <figcaption>New York City, USA</figcaption>
             </figure>
-        </section>
+        </div>
     </main>
 
     <footer>
