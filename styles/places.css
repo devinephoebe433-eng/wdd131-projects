@@ -1,25 +1,32 @@
 /* Custom Properties for a Modern Palette */
 :root {
-    --brand-color: #2d5a27; /* Deep Nature Green */
-    --accent-color: #e67e22; /* Sunset Orange */
+    --brand-color: #2d5a27;
+    --accent-color: #e67e22;
     --glass-bg: rgba(255, 255, 255, 0.85);
     --glass-border: rgba(255, 255, 255, 0.3);
     --text-main: #1a1a1a;
     --text-light: #555;
     --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+    /* ✅ ADDED (to remove named colors) */
+    --white: #ffffff;
+    --dark: #222222;
+    --light-bg: #f0f2f5;
+    --card-bg: #ffffff;
+    --footer-text: #aaaaaa;
 }
 
 /* Global Smooth Reset */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f2f5;
+    background-color: var(--light-bg);
     color: var(--text-main);
     scroll-behavior: smooth;
 }
 
-/* 1. Header & Navigation Blur Effect */
+/* Header */
 header {
     background: var(--brand-color);
     padding: 1rem 5%;
@@ -33,7 +40,7 @@ header {
 }
 
 header h1 {
-    color: white;
+    color: var(--white); /* ✅ fixed */
     font-size: clamp(1.2rem, 5vw, 1.8rem);
     letter-spacing: 1px;
 }
@@ -55,7 +62,7 @@ header h1 {
     transform: translateY(-2px);
 }
 
-/* 2. Hero Section with Overlay */
+/* Hero */
 .hero {
     position: relative;
     height: 60vh;
@@ -81,10 +88,10 @@ header h1 {
     box-shadow: var(--shadow);
 }
 
-/* 3. Main Content Layout (Grid) */
+/* Main */
 main {
     max-width: 1200px;
-    margin: -50px auto 40px; /* Overlaps hero for depth */
+    margin: -50px auto 40px;
     position: relative;
     padding: 0 20px;
     display: grid;
@@ -92,9 +99,9 @@ main {
     gap: 30px;
 }
 
-/* Card Aesthetic */
+/* Card */
 .card {
-    background: white;
+    background: var(--card-bg); /* ✅ fixed */
     border-radius: 15px;
     padding: 2rem;
     box-shadow: var(--shadow);
@@ -105,9 +112,9 @@ main {
     transform: translateY(-5px);
 }
 
-/* 4. Weather Section Styling */
+/* Weather */
 .weather {
-    background: linear-gradient(135deg, #ffffff 0%, #eef2f3 100%);
+    background: linear-gradient(135deg, var(--white) 0%, #eef2f3 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,7 +127,7 @@ main {
     margin-bottom: 20px;
 }
 
-/* Rubric Requirement: Pseudo-element Emoticon for Desktop */
+/* Desktop */
 @media (min-width: 768px) {
     main {
         grid-template-columns: 2fr 1fr;
@@ -132,16 +139,16 @@ main {
     }
 
     .weather-icon-mobile {
-        display: none; /* Rubric says mobile view only for SVG */
+        display: none;
     }
 }
 
-/* 5. Gallery Grid */
+/* Gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    grid-column: 1 / -1; /* Spans full width on desktop */
+    grid-column: 1 / -1;
 }
 
 .gallery figure {
@@ -165,13 +172,13 @@ main {
     padding: 15px;
     font-weight: 700;
     text-align: center;
-    background: white;
+    background: var(--card-bg); /* ✅ fixed */
 }
 
-/* 6. Footer */
+/* Footer */
 footer {
-    background: #222;
-    color: #aaa;
+    background: var(--dark); /* ✅ fixed */
+    color: var(--footer-text); /* ✅ fixed */
     text-align: center;
     padding: 3rem 1rem;
     margin-top: 50px;
@@ -181,11 +188,11 @@ footer span {
     color: var(--accent-color);
 }
 
-/* Mobile Toggle (Simple styling for your menu button) */
+/* Menu Button */
 #menu-btn {
     background: none;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid var(--white); /* ✅ fixed */
+    color: var(--white); /* ✅ fixed */
     font-size: 1.5rem;
     padding: 5px 10px;
     cursor: pointer;
