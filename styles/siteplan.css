@@ -1,9 +1,9 @@
-/* SITE PLAN COLOR SCHEMA - BERRY & CREAM */
+/* SITE PLAN COLOR SCHEMA */
 :root {
-    --bg-cream: #F4EFE6;      /* Main background from image */
-    --berry-red: #A63D56;     /* Primary accent/Header from image */
-    --sand-tan: #D9D1C1;      /* Secondary box color from image */
-    --charcoal-text: #2D2D2D; /* High-contrast reading text */
+    --bg-cream: #F4EFE6;
+    --berry-red: #A63D56;
+    --sand-tan: #D9D1C1;
+    --charcoal-text: #2D2D2D;
     --white: #FFFFFF;
 }
 
@@ -27,7 +27,6 @@ header {
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif;
-    margin: 0;
 }
 
 h2 {
@@ -42,15 +41,17 @@ section {
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 4px;
-    box-shadow: 4px 4px 0px var(--sand-tan); /* Styled like the template */
+    box-shadow: 4px 4px 0px var(--sand-tan);
 }
 
 .color-palette {
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 
+/* New Swatch Classes to replace inline styles */
 .swatch {
     width: 120px;
     height: 60px;
@@ -58,17 +59,30 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     font-size: 0.8rem;
     font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.berry {
+    background-color: var(--berry-red);
+    color: var(--white);
+}
+
+.cream {
+    background-color: var(--bg-cream);
+    color: var(--charcoal-text);
+    border: 1px solid #ccc;
+}
+
+.sand {
+    background-color: var(--sand-tan);
+    color: var(--charcoal-text);
 }
 
 .wireframe-preview {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-top: 15px;
 }
 
 .wire-box {
@@ -76,6 +90,12 @@ section {
     padding: 20px;
     text-align: center;
     background-color: var(--bg-cream);
+}
+
+.site-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 600px) {
