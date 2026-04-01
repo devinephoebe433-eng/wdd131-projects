@@ -1,4 +1,27 @@
 /* temples.css - Base Styles */
+/* Mobile-first is already your default */
+
+/* Tablet view */
+@media (min-width: 768px) {
+    #gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+/* Desktop view */
+@media (min-width: 1024px) {
+    #gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
