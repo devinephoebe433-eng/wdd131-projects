@@ -1,18 +1,18 @@
 const mainnav = document.querySelector(".filter-nav");
 const hambutton = document.querySelector("#menu");
+
 hambutton.addEventListener("click", () => {
   mainnav.classList.toggle("show");
   hambutton.classList.toggle("show");
 });
+
 const today = new Date();
-const currentYear = document.querySelector("#year");
-currentYear.textContent = today.getFullYear();
-const lastModified = document.querySelector("#lastModified");
-const dateModified = document.lastModified;
-lastModified.innerHTML = `Last Modified: ${dateModified}`;
-document.addEventListener("DOMContentLoaded", function () => {
+document.querySelector("#year").textContent = today.getFullYear();
 
+document.querySelector("#lastModified").textContent =
+  "Last Modified: " + document.lastModified;
 
+document.addEventListener("DOMContentLoaded", function () {
 
   const temples = [
     {
@@ -71,41 +71,92 @@ document.addEventListener("DOMContentLoaded", function () => {
       imageUrl:
         "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-    // Add more temple objects here...
-  ];
-  function renderTemples(temples) {
-  const container = document.getElementById("#gallery");
-  container.innerHTML = "";
-  temples.forEach(temple => {
-    const templeCard = document.createElement("div");
-    templeCard.className = "temple-card";
-    templeCard.innerHTML = `
-      <img src="${temple.imageUrl}" alt="${temple.templeName}">
-      <h3>${temple.templeName}</h3>
-      <p>Location: ${temple.location}</p>
-      <p>Dedicated: ${temple.dedicated}</p>
-      <p>Area: ${temple.area} sq ft</p>
-    `;
-    container.appendChild(templeCard);
-  });
-}
-function filterTemples(criteria) {
-    let filteredTemples = temples;
-    const currentYear = new Date().getFullYear();
-    switch (key) {
-      case "old":
-        filteredTemples = temples.filter(temple => new Date(temple.dedicated).getFullYear() < 1900);
-        break;
-      case "new":
-        filteredTemples = temples.filter(temple => new Date(temple.dedicated).getFullYear() > 2000);
-        break; 
-      case "large":
-        filteredTemples = temples.filter(temple => temple.area > 90000);
-        break; 
-      case "small":
-        filteredTemples = temples.filter(temple => temple.area < 10000);
-        break; 
-      
-      default:
-        filteredTemples = temples;
+    {
+      templeName: "Nairobi Kenya",
+      location: "Nairobi, Kenya",
+      dedicated: "2023, May, 21",
+      area: 19800,
+      imageUrl:
+        "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/asuncion-paraguay/400x250/6-1f722c658877170182ae74e76ce9a1697f503b65.jpeg"
+    },
+    {
+      templeName: "Paris France",
+      location: "Paris, France",
+      dedicated: "2017, May, 21",
+      area: 44000,
+      imageUrl:
+        "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/paris-france/2018/400x250/Paris-Temple02.jpg"
+    },
+    {
+      templeName: "Tokyo Japan",
+      location: "Tokyo, Japan",
+      dedicated: "1980, October, 27",
+      area: 52900,
+      imageUrl:
+        "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/tokyo-japan/400x640/tokyo_japan_temple-evening.jpeg"
     }
+  ];
+
+  function renderTemples(list) {
+    const container = document.getElementById("gallery");
+    container.innerHTML = "";
+
+    list.forEach(temple => {
+      const card = document.createElement("div");
+      card.className = "temple-card";
+
+      card.innerHTML = `
+        <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+        <h3>${temple.templeName}</h3>
+        <p>${temple.location}</p>
+        <p>${temple.dedicated}</p>
+        <p>${temple.area} sq ft</p>
+      `;
+
+      container.appendChild(card);
+    });
+  }
+
+  function filterTemples(key) {
+    let filtered = temples;
+
+    if (key === "old") {
+      filtered = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
+    } else if (key === "new") {
+      filtered = temples.filter(t => new Date(t.dedicated).getFullYear() > 2000);
+    } else if (key === "large") {
+      filtered = temples.filter(t => t.area > 90000);
+    } else if (key === "small") {
+      filtered = temples.filter(t => t.area < 10000);
+    }
+
+    renderTemples(filtered);
+  }
+
+  document.querySelector("#filter-all").addEventListener("click", e => {
+    e.preventDefault();
+    filterTemples("all");
+  });
+
+  document.querySelector("#filter-old").addEventListener("click", e => {
+    e.preventDefault();
+    filterTemples("old");
+  });
+
+  document.querySelector("#filter-new").addEventListener("click", e => {
+    e.preventDefault();
+    filterTemples("new");
+  });
+
+  document.querySelector("#filter-large").addEventListener("click", e => {
+    e.preventDefault();
+    filterTemples("large");
+  });
+
+  document.querySelector("#filter-small").addEventListener("click", e => {
+    e.preventDefault();
+    filterTemples("small");
+  });
+
+  renderTemples(temples);
+});

@@ -98,3 +98,16 @@ footer {
 .hidden {
   display: none;
 }
+
+.temple-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+}
+
+#menu {
+  font-size: 2rem;
+  background: none;
+  border: none;
+}
