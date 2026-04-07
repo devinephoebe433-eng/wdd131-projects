@@ -9,27 +9,32 @@ const songs = [
     { id: "s7", name: "Devine" }
 ];
 
-// Populate Select
-const select = document.getElementById("product");
+// Run after DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
 
-if (select) {
-    songs.forEach(song => {
-        const option = document.createElement("option");
-        option.value = song.id;
-        option.textContent = song.name;
-        select.appendChild(option);
-    });
-}
+    // Populate Select
+    const select = document.getElementById("product");
 
-// Review Counter
-if (window.location.pathname.includes("review.html")) {
-    let count = localStorage.getItem("reviewCount") || 0;
-    count++;
-
-    localStorage.setItem("reviewCount", count);
-
-    const counter = document.getElementById("counter");
-    if (counter) {
-        counter.textContent = count;
+    if (select) {
+        songs.forEach(song => {
+            const option = document.createElement("option");
+            option.value = song.id;
+            option.textContent = song.name;
+            select.appendChild(option);
+        });
     }
-}
+
+    // Review Counter
+    if (window.location.pathname.includes("review.html")) {
+        let count = localStorage.getItem("reviewCount") || 0;
+        count = Number(count) + 1;
+
+        localStorage.setItem("reviewCount", count);
+
+        const counter = document.getElementById("counter");
+        if (counter) {
+            counter.textContent = count;
+        }
+    }
+
+});
