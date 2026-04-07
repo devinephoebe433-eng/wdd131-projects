@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Review</title>
+
+    <title>Product Review Form</title>
+    <meta name="description" content="Submit your product review including rating, features, and feedback.">
+    <meta name="author" content="Phoebe Devine">
+
     <link rel="stylesheet" href="styles/form.css">
     <script src="scripts/form.js" defer></script>
 </head>
@@ -16,7 +20,7 @@
 <main>
 <form method="get" action="review.html">
 
-    <!-- Product Name -->
+    <!-- Product -->
     <label for="product">Product Name</label>
     <select id="product" name="product" required>
         <option value="" disabled selected>Select a Product ...</option>
@@ -26,11 +30,21 @@
     <fieldset>
         <legend>Overall Rating</legend>
 
-        <label><input type="radio" name="rating" value="1" required> ☆</label>
-        <label><input type="radio" name="rating" value="2"> ☆☆</label>
-        <label><input type="radio" name="rating" value="3"> ☆☆☆</label>
-        <label><input type="radio" name="rating" value="4"> ☆☆☆☆</label>
-        <label><input type="radio" name="rating" value="5"> ☆☆☆☆☆</label>
+        <input type="radio" id="star1" name="rating" value="1" required>
+        <label for="star1">☆</label>
+
+        <input type="radio" id="star2" name="rating" value="2" required>
+        <label for="star2">☆☆</label>
+
+        <input type="radio" id="star3" name="rating" value="3" required>
+        <label for="star3">☆☆☆</label>
+
+        <input type="radio" id="star4" name="rating" value="4" required>
+        <label for="star4">☆☆☆☆</label>
+
+        <input type="radio" id="star5" name="rating" value="5" required>
+        <label for="star5">☆☆☆☆☆</label>
+
     </fieldset>
 
     <!-- Date -->
@@ -41,17 +55,25 @@
     <fieldset>
         <legend>Useful Features</legend>
 
-        <label><input type="checkbox" name="features" value="Durability"> Durability</label>
-        <label><input type="checkbox" name="features" value="Ease of Use"> Ease of Use</label>
-        <label><input type="checkbox" name="features" value="Performance"> Performance</label>
-        <label><input type="checkbox" name="features" value="Design"> Design</label>
+        <input type="checkbox" id="durability" name="features" value="Durability">
+        <label for="durability">Durability</label>
+
+        <input type="checkbox" id="ease" name="features" value="Ease of Use">
+        <label for="ease">Ease of Use</label>
+
+        <input type="checkbox" id="performance" name="features" value="Performance">
+        <label for="performance">Performance</label>
+
+        <input type="checkbox" id="design" name="features" value="Design">
+        <label for="design">Design</label>
+
     </fieldset>
 
     <!-- Review -->
     <label for="review">Written Review</label>
     <textarea id="review" name="review"></textarea>
 
-    <!-- Username -->
+    <!-- Name -->
     <label for="username">Your Name</label>
     <input type="text" id="username" name="username">
 
@@ -62,7 +84,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2026 | WDD 131</p>
+    <p>&copy; 2026 | WDD 131 | Phoebe Devine</p>
 </footer>
 
 </body>

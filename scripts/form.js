@@ -6,23 +6,32 @@ const products = [
     { id: "p4", name: "Smart Watch" }
 ];
 
-// Populate select options
-const select = document.getElementById("product");
+// Populate Product Select
+const productSelect = document.getElementById("product");
 
-if (select) {
+if (productSelect) {
     products.forEach(product => {
-        let option = document.createElement("option");
+        const option = document.createElement("option");
         option.value = product.id;
         option.textContent = product.name;
-        select.appendChild(option);
+        productSelect.appendChild(option);
     });
 }
 
-// LocalStorage Counter
+// Review Counter
 if (window.location.pathname.includes("review.html")) {
-    let count = localStorage.getItem("reviewCount") || 0;
+    let count = localStorage.getItem("reviewCount");
+
+    if (!count) {
+        count = 0;
+    }
+
     count++;
+
     localStorage.setItem("reviewCount", count);
 
-    document.getElementById("counter").textContent = count;
+    const counterDisplay = document.getElementById("counter");
+    if (counterDisplay) {
+        counterDisplay.textContent = count;
+    }
 }
