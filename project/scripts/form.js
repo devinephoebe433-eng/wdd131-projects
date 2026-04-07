@@ -1,9 +1,12 @@
 // Song Array
 const songs = [
-    { id: "s1", name: "Ethereal Echoes" },
-    { id: "s2", name: "Midnight Whispers" },
-    { id: "s3", name: "Golden Silence" },
-    { id: "s4", name: "Fading Light" }
+    { id: "s1", name: "Unsaid Emily" },
+    { id: "s2", name: "Dusk Till Dawn" },
+    { id: "s3", name: "Never Be The Same" },
+    { id: "s4", name: "Photograph" },
+    { id: "s5", name: "Zoo" },
+    { id: "s6", name: "Love Is Wicked" },
+    { id: "s7", name: "Devine" }
 ];
 
 // Populate Select
