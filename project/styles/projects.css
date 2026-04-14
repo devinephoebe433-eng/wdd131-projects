@@ -222,3 +222,32 @@ footer {
   background: rgba(0,0,0,0.2);
   border-radius: 10px;
 }
+/* ================= SEO CONTENT STYLE ================= */
+
+section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+section h2 {
+  color: #A63D56;
+  margin-bottom: 10px;
+}
+
+section p {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* better hero spacing */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2.2rem;
+}
